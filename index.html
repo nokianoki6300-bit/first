@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Politica de confidențialitate — Dr. Roman Carmen, Medic Dentist Oradea</title>
-<meta name="description" content="Politica de confidențialitate a cabinetului stomatologic Dr. Roman Carmen, Oradea: ce date prelucrăm, în ce scop și care sunt drepturile tale conform GDPR.">
-<meta name="robots" content="noindex, follow">
+<title>Dr. Roman Carmen — Medic Dentist Oradea | Stomatologie fără durere</title>
+<meta name="description" content="Cabinet stomatologic Dr. Roman Carmen în Oradea. Tratamente moderne, complet fără durere, programări exacte fără așteptare. Rating 5.0 din recenziile pacienților. Programează o consultație: 0740 885 369.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,550;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,145 +15,972 @@
   --teal-mid:#2E7E82;
   --mint:#EDF7F3;
   --mint-deep:#D8ECE3;
+  --white:#FFFFFF;
+  --green-cta:#15803D;
+  --green-cta-hover:#136A34;
+  --gold:#D9A441;
   --text:#12333A;
   --text-soft:#43616B;
+  --danger:#C2382C;
+  --radius:18px;
+  --shadow-soft:0 8px 30px rgba(15,94,99,.10);
+  --shadow-card:0 2px 12px rgba(15,94,99,.07);
   --font-display:"Fraunces",Georgia,serif;
   --font-body:"Inter",-apple-system,"Segoe UI",sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:var(--font-body);color:var(--text);background:#fff;
-  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+body{
+  font-family:var(--font-body);
+  color:var(--text);
+  background:var(--white);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
 a{color:var(--teal-deep)}
 :focus-visible{outline:3px solid var(--teal-mid);outline-offset:2px;border-radius:4px}
-.container{max-width:760px;margin:0 auto;padding:0 24px}
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--teal-deep);color:#fff;padding:12px 20px;border-radius:0 0 8px 0;
+}
+.skip-link:focus{left:0}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* ---------- Header ---------- */
 .site-header{
-  background:var(--mint);border-bottom:1px solid var(--mint-deep);
-  padding:20px 0;
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--mint-deep);
 }
-.back-link{
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  min-height:72px;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--teal-ink)}
+.brand-mark{
+  width:40px;height:40px;border-radius:12px;flex-shrink:0;
+  background:var(--teal-deep);display:grid;place-items:center;
+}
+.brand-name{font-family:var(--font-display);font-weight:600;font-size:1.06rem;line-height:1.2}
+.brand-sub{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft);font-weight:600}
+.main-nav{display:flex;gap:28px}
+.main-nav a{
+  text-decoration:none;color:var(--text-soft);font-weight:500;font-size:.95rem;
+  padding:8px 2px;transition:color .2s ease;
+}
+.main-nav a:hover{color:var(--teal-deep)}
+.header-phone{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:44px;min-width:44px;
+  background:var(--mint);color:var(--teal-ink);
+  text-decoration:none;font-weight:600;font-size:.95rem;
+  padding:11px 18px;border-radius:999px;border:1px solid var(--mint-deep);
+  transition:background .2s ease,border-color .2s ease;white-space:nowrap;
+}
+.header-phone:hover{background:var(--mint-deep)}
+.nav-toggle{display:none}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:
+    radial-gradient(900px 480px at 85% -10%, rgba(46,126,130,.10), transparent 60%),
+    var(--mint);
+  overflow:hidden;
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;
+  padding-top:clamp(56px,8vw,96px);padding-bottom:clamp(64px,9vw,104px);
+}
+.eyebrow{
   display:inline-flex;align-items:center;gap:8px;
-  color:var(--teal-ink);text-decoration:none;font-weight:600;font-size:.95rem;
-  min-height:44px;
+  font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--teal-deep);margin-bottom:20px;
 }
-.back-link svg{width:17px;height:17px;stroke:currentColor}
-.back-link:hover{color:var(--teal-deep)}
-main{padding:clamp(40px,7vw,72px) 0 clamp(56px,8vw,88px)}
-h1{
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--teal-deep);border-radius:2px}
+.hero h1{
   font-family:var(--font-display);font-weight:550;
-  font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.2;
-  color:var(--teal-ink);margin-bottom:10px;letter-spacing:-.01em;
+  font-size:clamp(2.1rem,4.6vw,3.3rem);
+  line-height:1.13;color:var(--teal-ink);
+  letter-spacing:-.01em;margin-bottom:20px;
 }
-.updated{font-size:.88rem;color:var(--text-soft);margin-bottom:36px}
-h2{
-  font-family:var(--font-display);font-weight:550;font-size:1.35rem;
-  color:var(--teal-ink);margin:36px 0 12px;
+.hero h1 em{font-style:italic;color:var(--teal-deep)}
+.hero-lead{
+  font-size:1.1rem;color:var(--text-soft);max-width:34em;margin-bottom:32px;
 }
-p,li{color:var(--text);font-size:.98rem;margin-bottom:12px}
-ul{padding-left:22px;margin-bottom:12px}
-li{margin-bottom:6px}
-.card{
-  background:var(--mint);border:1px solid var(--mint-deep);border-radius:16px;
-  padding:22px 24px;margin:16px 0;
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 30px;border-radius:14px;
+  font-family:var(--font-body);font-size:1.02rem;font-weight:600;
+  text-decoration:none;cursor:pointer;border:none;
+  transition:background .2s ease,transform .15s ease,box-shadow .2s ease;
 }
-.card p{margin-bottom:6px}
-.card p:last-child{margin-bottom:0}
-footer{
-  border-top:1px solid var(--mint-deep);padding:28px 0;
-  font-size:.85rem;color:var(--text-soft);
+.btn:active{transform:scale(.98)}
+.btn-primary{
+  background:var(--green-cta);color:#fff;
+  box-shadow:0 6px 20px rgba(21,128,61,.25);
+}
+.btn-primary:hover{background:var(--green-cta-hover)}
+.btn-ghost{
+  background:var(--white);color:var(--teal-ink);
+  border:1px solid var(--mint-deep);box-shadow:var(--shadow-card);
+}
+.btn-ghost:hover{background:var(--mint)}
+.rating{display:flex;align-items:center;gap:12px}
+.stars{display:flex;gap:3px}
+.stars svg{width:20px;height:20px;fill:var(--gold)}
+.rating strong{font-size:1.05rem;color:var(--teal-ink);white-space:nowrap}
+.rating span{font-size:.9rem;color:var(--text-soft)}
+
+/* Hero visual — the SMS signature card */
+.hero-visual{position:relative;min-height:420px}
+.visual-panel{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,#FFFFFF 0%,#F2FAF6 100%);
+  border:1px solid var(--mint-deep);border-radius:28px;
+  box-shadow:var(--shadow-soft);
+}
+.visual-panel::after{
+  content:"";position:absolute;inset:0;border-radius:28px;
+  background:
+    radial-gradient(circle at 20% 85%, rgba(217,164,65,.07), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(15,94,99,.06), transparent 45%);
+}
+.visual-content{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;gap:16px;
+  padding:clamp(28px,6%,48px) clamp(20px,7%,44px);
+}
+.sms-card{
+  background:var(--white);border:1px solid var(--mint-deep);
+  border-radius:20px;padding:20px 22px;
+  box-shadow:0 18px 44px rgba(11,58,62,.14);
+  animation:floatIn .8s ease-out both;
+}
+.sms-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.sms-avatar{
+  width:42px;height:42px;border-radius:50%;flex-shrink:0;
+  background:var(--teal-deep);color:#fff;display:grid;place-items:center;
+  font-weight:700;font-size:.9rem;letter-spacing:.02em;
+}
+.sms-meta strong{display:block;font-size:.94rem;color:var(--teal-ink)}
+.sms-meta span{font-size:.78rem;color:var(--text-soft)}
+.sms-bubble{
+  background:var(--mint);border-radius:4px 14px 14px 14px;
+  padding:13px 16px;font-size:.92rem;color:var(--text);line-height:1.55;
+}
+.sms-bubble b{color:var(--teal-ink)}
+.sms-foot{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:10px 16px;flex-wrap:wrap;margin-top:14px;
+}
+.sms-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.78rem;font-weight:600;color:var(--green-cta);
+}
+.sms-tag svg{width:15px;height:15px}
+.sms-rating{
+  display:inline-flex;align-items:center;gap:7px;margin-left:auto;
+  font-size:.78rem;font-weight:600;color:var(--teal-ink);
+}
+.sms-rating .stars svg{width:13px;height:13px}
+.chip{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--white);border:1px solid var(--mint-deep);
+  border-radius:999px;padding:11px 18px;
+  font-size:.86rem;font-weight:600;color:var(--teal-ink);
+  box-shadow:var(--shadow-card);
+}
+.chip svg{width:18px;height:18px;stroke:var(--teal-deep);flex-shrink:0}
+.chip-wait{align-self:center;animation:floatIn .8s .25s ease-out both}
+.visual-caption{
+  position:absolute;left:0;right:0;bottom:-38px;text-align:center;
+  font-size:.83rem;color:var(--text-soft);
+}
+@keyframes floatIn{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ---------- Review strip ---------- */
+.reviews{background:var(--white);border-bottom:1px solid var(--mint-deep)}
+.reviews-inner{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+  padding-block:clamp(44px,6vw,64px);
+}
+.review{border-left:3px solid var(--mint-deep);padding-left:20px}
+.review .stars{margin-bottom:10px}
+.review .stars svg{width:15px;height:15px}
+.review blockquote{
+  font-family:var(--font-display);font-weight:450;font-style:italic;
+  font-size:1.06rem;line-height:1.45;color:var(--teal-ink);margin-bottom:8px;
+}
+.review cite{font-style:normal;font-size:.82rem;color:var(--text-soft)}
+
+/* ---------- Sections ---------- */
+.section{padding:clamp(64px,9vw,110px) 0}
+.section-head{max-width:620px;margin-bottom:clamp(36px,5vw,56px)}
+.section-head h2{
+  font-family:var(--font-display);font-weight:550;
+  font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.2;
+  color:var(--teal-ink);letter-spacing:-.01em;margin-bottom:14px;
+}
+.section-head p{color:var(--text-soft);font-size:1.05rem}
+
+/* ---------- Comfort ---------- */
+.comfort{background:var(--white)}
+.comfort-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.comfort-card{
+  background:var(--mint);border:1px solid var(--mint-deep);border-radius:var(--radius);
+  padding:30px 30px 32px;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.comfort-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft)}
+.comfort-card.wide{grid-column:1/-1;display:flex;gap:26px;align-items:flex-start}
+.icon-tile{
+  width:52px;height:52px;border-radius:14px;flex-shrink:0;
+  background:var(--white);border:1px solid var(--mint-deep);
+  display:grid;place-items:center;margin-bottom:18px;
+}
+.comfort-card.wide .icon-tile{margin-bottom:0}
+.icon-tile svg{width:26px;height:26px;stroke:var(--teal-deep)}
+.comfort-card h3{
+  font-family:var(--font-display);font-weight:550;font-size:1.22rem;
+  color:var(--teal-ink);margin-bottom:8px;
+}
+.comfort-card p{color:var(--text-soft);font-size:.97rem}
+.comfort-card p q{font-style:italic;color:var(--teal-deep);quotes:"„" "”"}
+
+/* ---------- Services ---------- */
+.services{background:var(--mint)}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.service-card{
+  background:var(--white);border:1px solid var(--mint-deep);border-radius:var(--radius);
+  padding:28px 26px 30px;box-shadow:var(--shadow-card);
+  display:flex;flex-direction:column;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.service-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft)}
+.service-card h3{
+  font-family:var(--font-display);font-weight:550;font-size:1.14rem;
+  color:var(--teal-ink);margin-bottom:8px;line-height:1.3;
+}
+.service-card p{color:var(--text-soft);font-size:.93rem;flex-grow:1}
+.service-link{
+  display:inline-flex;align-items:center;gap:7px;margin-top:8px;
+  min-height:44px;
+  font-size:.88rem;font-weight:600;color:var(--teal-deep);text-decoration:none;
+}
+.service-link svg{width:15px;height:15px;stroke:currentColor;transition:transform .2s ease}
+.service-link:hover svg{transform:translateX(3px)}
+
+/* ---------- Booking ---------- */
+.booking{background:var(--white)}
+.booking-inner{
+  display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,72px);align-items:start;
+}
+.booking-aside h2{
+  font-family:var(--font-display);font-weight:550;
+  font-size:clamp(1.7rem,3.2vw,2.3rem);line-height:1.2;
+  color:var(--teal-ink);letter-spacing:-.01em;margin-bottom:16px;
+}
+.booking-aside>p{color:var(--text-soft);font-size:1.03rem;margin-bottom:28px}
+.booking-points{list-style:none;display:grid;gap:14px}
+.booking-points li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem;color:var(--text)}
+.booking-points svg{width:20px;height:20px;stroke:var(--green-cta);flex-shrink:0;margin-top:2px}
+.booking-form{
+  background:var(--mint);border:1px solid var(--mint-deep);border-radius:24px;
+  padding:clamp(26px,4vw,40px);box-shadow:var(--shadow-card);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{margin-bottom:20px}
+.field label{
+  display:block;font-size:.9rem;font-weight:600;color:var(--teal-ink);margin-bottom:7px;
+}
+.field label .req{color:var(--danger)}
+.field input,.field select{
+  width:100%;min-height:52px;padding:0 16px;
+  font-family:var(--font-body);font-size:1rem;color:var(--text);
+  background:var(--white);border:1px solid var(--mint-deep);border-radius:12px;
+  transition:border-color .2s ease,box-shadow .2s ease;
+  appearance:none;-webkit-appearance:none;
+}
+.field select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%230F5E63' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;
+  padding-right:44px;cursor:pointer;
+}
+.field input:focus,.field select:focus{
+  outline:none;border-color:var(--teal-mid);
+  box-shadow:0 0 0 3px rgba(46,126,130,.18);
+}
+.field input[aria-invalid="true"]{border-color:var(--danger)}
+.helper{
+  display:flex;gap:9px;align-items:flex-start;
+  margin-top:9px;font-size:.85rem;line-height:1.5;color:var(--text-soft);
+}
+.helper svg{width:16px;height:16px;stroke:var(--teal-deep);flex-shrink:0;margin-top:2px}
+.field-error{
+  display:none;margin-top:7px;font-size:.84rem;font-weight:500;color:var(--danger);
+}
+.field-error.visible{display:flex;align-items:center;gap:6px}
+.field-error svg{width:14px;height:14px;stroke:var(--danger);flex-shrink:0}
+.btn-submit{width:100%;margin-top:6px}
+.btn-submit[disabled]{opacity:.65;cursor:wait}
+.spinner{
+  width:18px;height:18px;border-radius:50%;
+  border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;
+  animation:spin .7s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.form-note{margin-top:16px;font-size:.8rem;color:var(--text-soft);text-align:center}
+.form-status{border-radius:16px;padding:22px 24px;display:none;margin-top:4px}
+.form-status.visible{display:block}
+.form-status.success{background:#E9F6EE;border:1px solid #BFE3CC}
+.form-status.error{background:#FBEDEB;border:1px solid #F0C9C4}
+.form-status h3{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--font-display);font-size:1.15rem;font-weight:550;margin-bottom:8px;
+}
+.form-status.success h3{color:var(--green-cta)}
+.form-status.error h3{color:var(--danger)}
+.form-status h3 svg{width:22px;height:22px;flex-shrink:0}
+.form-status p{font-size:.94rem;color:var(--text)}
+.form-status a{font-weight:600}
+.honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* ---------- Footer ---------- */
+.site-footer{background:var(--teal-ink);color:#D6E9E4}
+.footer-inner{
+  display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(32px,5vw,64px);
+  padding-top:clamp(56px,7vw,80px);padding-bottom:40px;
+}
+.footer-brand .brand-name{color:#fff;font-size:1.15rem}
+.footer-brand p{font-size:.92rem;color:#A9CCC4;margin-top:12px;max-width:26em}
+.footer-map{
+  margin-top:22px;border-radius:16px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  background:#134A4E;
+}
+.footer-map iframe{display:block;width:100%;height:220px;border:0}
+.map-consent{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  width:100%;min-height:220px;padding:24px;cursor:pointer;
+  background:
+    linear-gradient(rgba(11,58,62,.25),rgba(11,58,62,.25)),
+    repeating-linear-gradient(45deg,#134A4E 0 14px,#11444840 14px 28px);
+  border:0;color:#fff;font-family:var(--font-body);text-align:center;
+  transition:filter .2s ease;
+}
+.map-consent:hover{filter:brightness(1.12)}
+.map-consent svg{width:28px;height:28px;stroke:#fff}
+.map-consent strong{font-size:.98rem;font-weight:600}
+.map-consent small{font-size:.76rem;color:#A9CCC4;max-width:30em;line-height:1.5}
+.footer-map-link{
+  display:inline-flex;align-items:center;gap:9px;margin-top:14px;
+  color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
+  padding:11px 18px;border-radius:999px;
+  transition:background .2s ease;
+}
+.footer-map-link:hover{background:rgba(255,255,255,.18)}
+.footer-map-link svg{width:17px;height:17px;stroke:#fff}
+.site-footer h4{
+  font-size:.8rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:#8FBDB3;margin-bottom:18px;
+}
+.footer-list{list-style:none;display:grid;gap:12px;font-size:.94rem}
+.footer-list li{display:flex;gap:11px;align-items:flex-start}
+.footer-list svg{width:18px;height:18px;stroke:#8FBDB3;flex-shrink:0;margin-top:2px}
+.footer-list a{
+  color:#D6E9E4;text-decoration:none;
+  display:inline-flex;align-items:center;min-height:44px;
+  margin-block:-10px;
+}
+.footer-list a:hover{text-decoration:underline}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:22px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:.82rem;color:#8FBDB3;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:64px}
+  .hero-visual{min-height:380px;max-width:560px;margin:0 auto;width:100%}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .booking-inner{grid-template-columns:1fr;gap:44px}
+}
+@media (max-width:768px){
+  .main-nav{display:none}
+  .reviews-inner{grid-template-columns:1fr;gap:24px}
+  .comfort-grid{grid-template-columns:1fr}
+  .comfort-card.wide{flex-direction:column;gap:0}
+  .comfort-card.wide .icon-tile{margin-bottom:18px}
+  .footer-inner{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .header-phone span{display:none}
+  .header-phone{padding:11px 13px}
+}
+@media (max-width:480px){
+  .services-grid{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+  .hero-visual{min-height:340px}
 }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#continut">Sari la conținut</a>
+
+<!-- ================= HEADER ================= -->
 <header class="site-header">
-  <div class="container">
-    <a class="back-link" href="../">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-      Înapoi la pagina principală
+  <div class="container header-inner">
+    <a class="brand" href="#" aria-label="Dr. Roman Carmen — Medic Dentist, pagina principală">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5.5c-1.6-1.9-4.2-2.4-6-1-2 1.6-2.3 4.5-1.2 7 1.2 2.8 1.7 5.8 2.5 8.7.3 1 1.7 1 2 0l1.4-4.8c.4-1.2 2.2-1.2 2.6 0l1.4 4.8c.3 1 1.7 1 2 0 .8-2.9 1.3-5.9 2.5-8.7 1.1-2.5.8-5.4-1.2-7-1.8-1.4-4.4-.9-6 1Z"/>
+        </svg>
+      </span>
+      <span>
+        <span class="brand-name">Dr. Roman Carmen</span><br>
+        <span class="brand-sub">Medic Dentist · Oradea</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Navigare principală">
+      <a href="#confort">De ce noi</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#programare">Programare</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-phone" href="tel:+40740885369">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/>
+      </svg>
+      <span>0740 885 369</span>
     </a>
   </div>
 </header>
 
-<main class="container">
-  <h1>Politica de confidențialitate</h1>
-  <p class="updated">Ultima actualizare: 4 iulie 2026</p>
+<main id="continut">
 
-  <h2>1. Cine suntem</h2>
-  <div class="card">
-    <p><strong>Operator de date:</strong> Dr. Roman Carmen — Medic Dentist</p>
-    <p><strong>Adresă:</strong> Cabinet 1, Strada Podului nr. 1, bl. B12, ap. 33, 410365 Oradea, România</p>
-    <p><strong>Telefon:</strong> <a href="tel:+40740885369">0740 885 369</a></p>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <p class="eyebrow">Cabinet stomatologic · Oradea</p>
+      <h1>Zâmbetul tău, pe mâini sigure. <em>Complet fără durere.</em></h1>
+      <p class="hero-lead">
+        Tratamente stomatologice moderne într-un cabinet unde fiecare vizită începe exact la ora
+        programată. Fără așteptare, fără grabă, fără disconfort — doar grijă adevărată pentru zâmbetul tău.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#programare">
+          Programează o consultație
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </a>
+        <a class="btn btn-ghost" href="tel:+40740885369">Sună acum: 0740 885 369</a>
+      </div>
+      <div class="rating">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+        </span>
+        <strong>5.0 din 5</strong>
+        <span>· din recenziile pacienților</span>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="visual-panel"></div>
+      <div class="visual-content">
+      <div class="sms-card">
+        <div class="sms-head">
+          <span class="sms-avatar">RC</span>
+          <div class="sms-meta">
+            <strong>Dr. Roman Carmen</strong>
+            <span>Programare nouă · acum</span>
+          </div>
+        </div>
+        <p class="sms-bubble">
+          <b>Maria D.</b> a solicitat o programare pentru <b>marți, între 9:00–12:00</b>.
+          Telefon: 07xx xxx xxx
+        </p>
+        <div class="sms-foot">
+          <span class="sms-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Primită direct pe telefonul doctorului
+          </span>
+          <span class="sms-rating">
+            <span class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+            </span>
+            5.0 · recenzii reale
+          </span>
+        </div>
+      </div>
+      <span class="chip chip-wait">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        Zero timp de așteptare
+      </span>
+      </div>
+      <p class="visual-caption">Cererea ta de programare ajunge instant la doctor.</p>
+    </div>
   </div>
-  <p>Această pagină explică ce date cu caracter personal prelucrăm prin intermediul
-  site-ului, în ce scop și care sunt drepturile tale, conform Regulamentului (UE)
-  2016/679 („GDPR").</p>
+</section>
 
-  <h2>2. Ce date colectăm și de ce</h2>
-  <p>Singurele date pe care le colectăm prin site sunt cele introduse de tine în
-  formularul de programare:</p>
-  <ul>
-    <li><strong>Numele complet</strong> — ca să știm cine solicită programarea;</li>
-    <li><strong>Numărul de telefon</strong> — ca să te putem suna pentru confirmarea
-    programării sau pentru stabilirea unei reprogramări;</li>
-    <li><strong>Ziua și intervalul orar preferat</strong> — ca să îți propunem o oră potrivită.</li>
-  </ul>
-  <p><strong>Scopul prelucrării:</strong> exclusiv preluarea și confirmarea telefonică a
-  cererii tale de programare. Nu folosim datele pentru marketing, nu trimitem mesaje
-  promoționale și nu vindem sau închiriem datele către terți.</p>
-  <p><strong>Temeiul legal:</strong> art. 6 alin. (1) lit. b) GDPR — demersuri făcute la
-  cererea ta înainte de încheierea unei relații de servicii medicale (programarea).</p>
+<!-- ================= REVIEWS ================= -->
+<section class="reviews" aria-label="Recenzii ale pacienților">
+  <div class="container reviews-inner">
+    <div class="review reveal">
+      <span class="stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+      </span>
+      <blockquote>„Cea mai puțin dureroasă experiență pe care am avut-o vreodată la stomatolog."</blockquote>
+      <cite>Pacient verificat · Google Reviews</cite>
+    </div>
+    <div class="review reveal">
+      <span class="stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+      </span>
+      <blockquote>„Un adevărat profesionist. Totul explicat calm, pe înțelesul meu, fără grabă."</blockquote>
+      <cite>Pacient verificat · Google Reviews</cite>
+    </div>
+    <div class="review reveal">
+      <span class="stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2z"/></svg>
+      </span>
+      <blockquote>„Recomand cu încredere — programare exactă, zero așteptare, rezultate excelente."</blockquote>
+      <cite>Pacient verificat · Google Reviews</cite>
+    </div>
+  </div>
+</section>
 
-  <h2>3. Cum ajung datele la noi</h2>
-  <p>La trimiterea formularului, datele sunt transmise prin serviciul
-  <strong>EmailJS</strong> (EmailJS Inc.), care le livrează ca e-mail către adresa
-  cabinetului, găzduită de <strong>Google (Gmail)</strong>. Acești furnizori acționează
-  ca persoane împuternicite, strict pentru livrarea mesajului. Datele nu sunt stocate
-  în site — site-ul nu are bază de date.</p>
+<!-- ================= COMFORT ================= -->
+<section class="section comfort" id="confort">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Factorul confort</p>
+      <h2>De ce pacienții revin cu drag</h2>
+      <p>Fiecare detaliu al cabinetului — de la tehnicile de tratament până la modul de plată — este gândit să facă vizita la dentist simplă și lipsită de griji.</p>
+    </div>
+    <div class="comfort-grid">
+      <article class="comfort-card wide reveal">
+        <span class="icon-tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4.9-4.5 2.3A5.7 5.7 0 0 0 7.5 3 5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>
+        </span>
+        <div>
+          <h3>Tratament complet fără durere</h3>
+          <p><q>Cea mai puțin dureroasă experiență</q> — așa descriu pacienții vizitele aici. Anestezie modernă, tehnici blânde și fiecare pas explicat calm, ca să te simți în siguranță din prima clipă până la final.</p>
+        </div>
+      </article>
+      <article class="comfort-card reveal">
+        <span class="icon-tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z"/><path d="M8.2 13.9 7 23l5-3 5 3-1.2-9.1"/></svg>
+        </span>
+        <h3>Un adevărat profesionist</h3>
+        <p>Diagnostic riguros, tratamente conform standardelor actuale și recomandări oneste — niciodată proceduri de care nu ai cu adevărat nevoie.</p>
+      </article>
+      <article class="comfort-card reveal">
+        <span class="icon-tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </span>
+        <h3>Programare exactă, zero așteptare</h3>
+        <p>Consultațiile au loc strict pe bază de programare. Ajungi la ora stabilită și ești preluat imediat — timpul tău e la fel de prețios ca sănătatea ta.</p>
+      </article>
+      <article class="comfort-card reveal">
+        <span class="icon-tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="5" r="2.2"/><path d="M13 8.5v5h4.5"/><circle cx="9.5" cy="17" r="4.5"/><path d="M13 8.5H8.8L7.6 13"/></svg>
+        </span>
+        <h3>Acces facil pentru toți pacienții</h3>
+        <p>Intrare complet accesibilă persoanelor în scaun rulant, fără trepte și fără obstacole — oricine este binevenit, în orice condiții.</p>
+      </article>
+      <article class="comfort-card reveal">
+        <span class="icon-tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+        </span>
+        <h3>Plată modernă, fără bătăi de cap</h3>
+        <p>Plătești cum îți este comod: card bancar, telefon sau NFC. Rapid, sigur și fără drumuri la bancomat.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <h2>4. Cât timp păstrăm datele</h2>
-  <p>E-mailurile cu cereri de programare sunt păstrate cel mult <strong>12 luni</strong>,
-  după care sunt șterse. Datele medicale rezultate în urma consultațiilor se supun
-  regulilor separate privind documentele medicale și nu fac obiectul acestui site.</p>
+<!-- ================= SERVICES ================= -->
+<section class="section services" id="servicii">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Servicii stomatologice</p>
+      <h2>Îngrijire completă, într-un singur cabinet</h2>
+      <p>De la controlul de rutină până la reabilitări complexe — tratamente moderne, adaptate nevoilor și confortului tău.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <span class="icon-tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+        </span>
+        <h3>Consultații &amp; Diagnostic</h3>
+        <p>Evaluare completă a sănătății orale și un plan de tratament clar, explicat transparent încă de la prima vizită.</p>
+        <a class="service-link" href="#programare">Programează-te
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+      <article class="service-card reveal">
+        <span class="icon-tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9.8 9.8 0 0 0-7 3l7 15 7-15a9.8 9.8 0 0 0-7-3Z"/><path d="M8.5 8.5c2.2 1.4 4.8 1.4 7 0"/></svg>
+        </span>
+        <h3>Stomatologie Preventivă</h3>
+        <p>Igienizări profesionale, detartraj și fluorizări care opresc problemele înainte să apară. Prevenția e cel mai blând tratament.</p>
+        <a class="service-link" href="#programare">Programează-te
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+      <article class="service-card reveal">
+        <span class="icon-tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.9-4.2-2.4-6-1-2 1.6-2.3 4.5-1.2 7 1.2 2.8 1.7 5.8 2.5 8.7.3 1 1.7 1 2 0l1.4-4.8c.4-1.2 2.2-1.2 2.6 0l1.4 4.8c.3 1 1.7 1 2 0 .8-2.9 1.3-5.9 2.5-8.7 1.1-2.5.8-5.4-1.2-7-1.8-1.4-4.4-.9-6 1Z"/></svg>
+        </span>
+        <h3>Tratamente Protetice</h3>
+        <p>Coroane, punți și proteze realizate cu precizie, adaptate perfect fizionomiei tale — funcționale, estetice, confortabile.</p>
+        <a class="service-link" href="#programare">Programează-te
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+      <article class="service-card reveal">
+        <span class="icon-tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M5.6 5.6 7 7M3 12h2M5.6 18.4 7 17M18.4 5.6 17 7M21 12h-2M18.4 18.4 17 17"/><circle cx="12" cy="14" r="5"/></svg>
+        </span>
+        <h3>Estetică Dentară</h3>
+        <p>Albiri profesionale și fațete dentare pentru un zâmbet natural și luminos, de care să fii mândru în fiecare zi.</p>
+        <a class="service-link" href="#programare">Programează-te
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <h2>5. Cookie-uri</h2>
-  <p>Site-ul nostru <strong>nu setează cookie-uri</strong> și nu folosește instrumente
-  de analiză sau publicitate.</p>
-  <p>Singura excepție: harta <strong>Google Maps</strong> din subsolul paginii se
-  încarcă doar după ce apeși pe butonul de încărcare. În acel moment, Google poate
-  seta propriile cookie-uri, conform
-  <a href="https://policies.google.com/privacy?hl=ro" target="_blank" rel="noopener">politicii de confidențialitate Google</a>.
-  Dacă nu apeși pe hartă, niciun cookie nu este setat.</p>
-  <p>Fonturile paginii sunt livrate prin Google Fonts, care nu setează cookie-uri,
-  dar primește adresa IP a vizitatorului la încărcarea fonturilor.</p>
+<!-- ================= BOOKING ================= -->
+<section class="section booking" id="programare">
+  <div class="container booking-inner">
+    <div class="booking-aside reveal">
+      <p class="eyebrow">Programare rapidă</p>
+      <h2>Programează-te în mai puțin de un minut</h2>
+      <p>Completează formularul, iar detaliile ajung instant la doctor. Te sunăm noi pentru confirmare — simplu și fără telefoane pierdute.</p>
+      <ul class="booking-points">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Răspuns telefonic în cel mai scurt timp
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Consultația începe fix la ora programată
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Reprogramare rapidă dacă intervalul e ocupat
+        </li>
+      </ul>
+    </div>
 
-  <h2>6. Drepturile tale</h2>
-  <p>Conform GDPR, ai dreptul:</p>
-  <ul>
-    <li>de <strong>acces</strong> la datele tale;</li>
-    <li>la <strong>rectificarea</strong> datelor inexacte;</li>
-    <li>la <strong>ștergerea</strong> datelor („dreptul de a fi uitat");</li>
-    <li>la <strong>restricționarea</strong> prelucrării;</li>
-    <li>la <strong>portabilitatea</strong> datelor;</li>
-    <li>de a te <strong>opune</strong> prelucrării;</li>
-    <li>de a depune o <strong>plângere</strong> la Autoritatea Națională de Supraveghere
-    a Prelucrării Datelor cu Caracter Personal (ANSPDCP) —
-    <a href="https://www.dataprotection.ro" target="_blank" rel="noopener">www.dataprotection.ro</a>.</li>
-  </ul>
-  <p>Pentru exercitarea oricărui drept, contactează-ne telefonic la
-  <a href="tel:+40740885369">0740 885 369</a> sau în scris la adresa cabinetului.
-  Răspundem în cel mult 30 de zile.</p>
+    <form class="booking-form reveal" id="bookingForm" novalidate>
+      <div class="field">
+        <label for="nume">Nume complet <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="nume" name="nume" autocomplete="name" required
+               placeholder="ex. Maria Dumitrescu" aria-describedby="err-nume">
+        <p class="field-error" id="err-nume" role="alert">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+          Te rugăm să introduci numele tău complet.
+        </p>
+      </div>
 
-  <h2>7. Modificări ale acestei politici</h2>
-  <p>Orice modificare a acestei politici va fi publicată pe această pagină, cu
-  actualizarea datei de mai sus.</p>
+      <div class="field">
+        <label for="telefon">Număr de telefon <span class="req" aria-hidden="true">*</span></label>
+        <input type="tel" id="telefon" name="telefon" autocomplete="tel" inputmode="tel" required
+               placeholder="ex. 0740 123 456" aria-describedby="helper-telefon err-telefon">
+        <p class="helper" id="helper-telefon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          Te contactăm telefonic în cel mai scurt timp pentru confirmare. Dacă intervalul selectat este deja ocupat, stabilim împreună o reprogramare rapidă.
+        </p>
+        <p class="field-error" id="err-telefon" role="alert">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+          Introdu un număr de telefon valid (ex. 0740 123 456).
+        </p>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="zi">Ziua preferată <span class="req" aria-hidden="true">*</span></label>
+          <select id="zi" name="zi" required aria-describedby="err-zi">
+            <option value="" selected disabled>Alege ziua</option>
+            <option>Luni</option>
+            <option>Marți</option>
+            <option>Miercuri</option>
+            <option>Joi</option>
+            <option>Vineri</option>
+            <option>Cât mai curând posibil</option>
+          </select>
+          <p class="field-error" id="err-zi" role="alert">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+            Alege o zi preferată.
+          </p>
+        </div>
+        <div class="field">
+          <label for="interval">Interval orar <span class="req" aria-hidden="true">*</span></label>
+          <select id="interval" name="interval" required aria-describedby="err-interval">
+            <option value="" selected disabled>Alege intervalul</option>
+            <option>Dimineața (9:00 – 12:00)</option>
+            <option>Prânz (12:00 – 15:00)</option>
+            <option>După-amiaza (15:00 – 18:00)</option>
+            <option>Oricând este liber</option>
+          </select>
+          <p class="field-error" id="err-interval" role="alert">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+            Alege un interval orar.
+          </p>
+        </div>
+      </div>
+
+      <!-- Honeypot anti-spam: hidden from humans, bots fill it in -->
+      <div class="honeypot" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+        <span id="submitLabel">Trimite cererea de programare</span>
+      </button>
+      <p class="form-note">Datele tale sunt folosite exclusiv pentru confirmarea programării — vezi <a href="politica-confidentialitate/">politica de confidențialitate</a>.</p>
+
+      <div class="form-status success" id="statusSuccess" aria-live="polite">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.5 2.5 2.5 5-5.5"/></svg>
+          Cererea ta a fost trimisă!
+        </h3>
+        <p>Dr. Roman Carmen a primit detaliile programării. Te contactăm în cel mai scurt timp pentru confirmare. Mulțumim pentru încredere!</p>
+      </div>
+      <div class="form-status error" id="statusError" aria-live="assertive">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          Cererea nu a putut fi trimisă
+        </h3>
+        <p>Te rugăm să încerci din nou sau sună-ne direct la <a href="tel:+40740885369">0740 885 369</a> — răspundem cu drag.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
 </main>
 
-<footer>
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" id="contact">
   <div class="container">
-    © 2026 Dr. Roman Carmen — Medic Dentist, Oradea ·
-    <a href="../">Pagina principală</a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name">Dr. Roman Carmen</span>
+        <p>Cabinet stomatologic privat în Oradea. Medic dentist dedicat tratamentelor moderne, fără durere, cu programări exacte și respect pentru timpul fiecărui pacient.</p>
+        <div class="footer-map">
+          <button type="button" class="map-consent" id="loadMapBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <strong>Apasă pentru a încărca harta</strong>
+            <small>Strada Podului nr. 1 · Oradea. Prin încărcarea hărții accepți cookie-urile și politica de confidențialitate Google Maps.</small>
+          </button>
+        </div>
+        <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=Strada+Podului+1+Oradea+410365" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Deschide în Google Maps
+        </a>
+      </div>
+      <div>
+        <h4>Contact &amp; Locație</h4>
+        <ul class="footer-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Cabinet 1, Strada Podului nr. 1,<br>bl. B12, ap. 33, 410365 Oradea</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <a href="tel:+40740885369">0740 885 369</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <span>Consultații exclusiv<br>pe bază de programare</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4>Facilități cabinet</h4>
+        <ul class="footer-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="5" r="2.2"/><path d="M13 8.5v5h4.5"/><circle cx="9.5" cy="17" r="4.5"/><path d="M13 8.5H8.8L7.6 13"/></svg>
+            <span>Intrare accesibilă persoanelor<br>cu scaun rulant</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+            <span>Plată cu cardul, telefonul<br>sau NFC</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z"/><path d="M8.2 13.9 7 23l5-3 5 3-1.2-9.1"/></svg>
+            <span>Rating 5.0 din 5<br>din recenziile pacienților</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dr. Roman Carmen — Medic Dentist, Oradea. Toate drepturile rezervate.</span>
+      <span>Medic dentist autorizat · Colegiul Medicilor Stomatologi din România · <a href="politica-confidentialitate/" style="color:#D6E9E4">Politica de confidențialitate</a></span>
+    </div>
   </div>
 </footer>
+
+<script>
+/* =====================================================================
+   BOOKING → EMAIL (EmailJS)
+   Full setup guide: see SETUP-EMAIL.md next to this file.
+   Fill in the three values from your EmailJS dashboard. The public key
+   is designed to be visible in page source — restrict it to your domain
+   in EmailJS → Account → Security once the site is deployed.
+   While any placeholder is unchanged, the form runs in demo mode and
+   shows the success state without a network call.
+   ===================================================================== */
+const EMAILJS = {
+  serviceId:  "service_bxfhn59",
+  templateId: "template_qvblakm",
+  publicKey:  "Z_gUZPPFVgcotwI_c"
+};
+
+const form = document.getElementById("bookingForm");
+const submitBtn = document.getElementById("submitBtn");
+const submitLabel = document.getElementById("submitLabel");
+const statusSuccess = document.getElementById("statusSuccess");
+const statusError = document.getElementById("statusError");
+
+const validators = {
+  nume: v => v.trim().length >= 3,
+  telefon: v => /^(\+4|4|0)?\s?7\d{2}[\s.-]?\d{3}[\s.-]?\d{3}$/.test(v.trim()) || /^(\+4|4|0)\d{9}$/.test(v.replace(/[\s.-]/g, "")),
+  zi: v => v !== "",
+  interval: v => v !== ""
+};
+
+function setFieldValidity(id, valid) {
+  const input = document.getElementById(id);
+  const error = document.getElementById("err-" + id);
+  input.setAttribute("aria-invalid", valid ? "false" : "true");
+  error.classList.toggle("visible", !valid);
+  return valid;
+}
+
+// Validate on blur, not on keystroke
+["nume", "telefon", "zi", "interval"].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener("blur", () => {
+    if (el.value !== "") setFieldValidity(id, validators[id](el.value));
+  });
+  el.addEventListener("input", () => {
+    if (el.getAttribute("aria-invalid") === "true" && validators[id](el.value)) {
+      setFieldValidity(id, true);
+    }
+  });
+});
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  statusSuccess.classList.remove("visible");
+  statusError.classList.remove("visible");
+
+  // Honeypot: silently drop bot submissions
+  if (form.website.value !== "") return;
+
+  let firstInvalid = null;
+  ["nume", "telefon", "zi", "interval"].forEach(id => {
+    const ok = setFieldValidity(id, validators[id](document.getElementById(id).value));
+    if (!ok && !firstInvalid) firstInvalid = document.getElementById(id);
+  });
+  if (firstInvalid) { firstInvalid.focus(); return; }
+
+  // Template variables available in the EmailJS email template as {{nume}},
+  // {{telefon}}, {{zi_preferata}}, {{interval_orar}}, {{trimis_la}}, {{rezumat}}
+  const templateParams = {
+    nume: form.nume.value.trim(),
+    telefon: form.telefon.value.trim(),
+    zi_preferata: form.zi.value,
+    interval_orar: form.interval.value,
+    trimis_la: new Date().toLocaleString("ro-RO"),
+    rezumat: `Programare noua: ${form.nume.value.trim()}, tel ${form.telefon.value.trim()}, ${form.zi.value}, ${form.interval.value}`
+  };
+
+  submitBtn.disabled = true;
+  submitLabel.innerHTML = '<span class="spinner" aria-hidden="true"></span>&nbsp;Se trimite…';
+
+  try {
+    if (Object.values(EMAILJS).some(v => v.startsWith("REPLACE_"))) {
+      // Demo mode until EmailJS is configured
+      await new Promise(r => setTimeout(r, 900));
+    } else {
+      // EmailJS REST API supports browser CORS, so the status is readable
+      // and success/error states are accurate.
+      const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service_id: EMAILJS.serviceId,
+          template_id: EMAILJS.templateId,
+          user_id: EMAILJS.publicKey,
+          template_params: templateParams
+        })
+      });
+      if (!res.ok) throw new Error("EmailJS responded " + res.status + ": " + await res.text());
+    }
+    form.reset();
+    statusSuccess.classList.add("visible");
+    statusSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  } catch (err) {
+    console.error("Booking webhook error:", err);
+    statusError.classList.add("visible");
+    statusError.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  } finally {
+    submitBtn.disabled = false;
+    submitLabel.textContent = "Trimite cererea de programare";
+  }
+});
+
+/* Click-to-load map: Google's iframe (and its cookies) load only after explicit consent */
+document.getElementById("loadMapBtn").addEventListener("click", function () {
+  const iframe = document.createElement("iframe");
+  iframe.src = "https://www.google.com/maps?q=Strada+Podului+nr.+1,+410365+Oradea,+Romania&hl=ro&z=16&output=embed";
+  iframe.title = "Harta locației cabinetului — Strada Podului nr. 1, Oradea";
+  iframe.setAttribute("allowfullscreen", "");
+  iframe.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+  this.replaceWith(iframe);
+});
+
+/* Scroll reveal — skipped entirely under prefers-reduced-motion (CSS forces visible) */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
 </body>
 </html>
